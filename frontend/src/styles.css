@@ -1,0 +1,199 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.show-more-link {
+    display: inline-block; /* Macht den Link fließend mit dem Text */
+    margin-top: -10px; /* Hebt den Link näher zum Text */
+    color: #007bff;; /* Link-Farbe, passend zu Ihrem Button */
+    font-size: 18px; /* Etwas kleiner als der Detailtext */
+    cursor: pointer; /* Ändert den Cursor zu einem Klickzeiger */
+    text-decoration: underline; /* Optional, um es deutlicher als Link zu kennzeichnen */
+}
+
+.show-more-link:hover {
+    color: #5199f3;; /* Etwas dunkleres Blau für Hover-Effekt */
+}
+
+.link {
+    color: #007bff;
+}
+
+.link:hover {
+    color: #5199f3;; /* Etwas dunkleres Blau für Hover-Effekt */
+}
+
+body.dark-mode {
+    background-color: #202124; /* Dunkler Hintergrund */
+    color: #fff; /* Weiße Schrift */
+}
+
+.menu-button {
+    background-color: #00152a; /* Blauer Button */
+    color: #fff; /* Weiße Schrift auf dem Button */
+}
+
+.menu-button:hover {
+    background-color: #0056b3; /* Dunklerer Blauton beim Hover */
+}
+
+/* Stil des Dark Mode Toggle */
+.dark-mode-toggle {
+    color: #fff; /* Weißer Text für den Dark Mode Toggle */
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+.mat-menu-panel {
+    min-width: 200px; /* Erhöhen Sie die Mindestbreite des Dropdown-Menüs */
+}
+
+.custom-icon-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.custom-icon-button:hover {
+    transform: scale(1.2);
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+}
+
+.custom-button {
+    background-color: #c2c2c2;
+    color: white;
+}
+
+.custom-button:hover {
+    background-color: #2626c5;
+}
+
+/* Stil für den 'Menu'-Button bei kleinen Bildschirmen */
+.menu-button-small {
+    background-color: #00152a; /* Blauer Button */
+    color: #fff; /* Weiße Schrift auf dem Button */
+}
+
+.menu-button-small:hover {
+    background-color: #0056b3; /* Dunklerer Blauton beim Hover */
+}
+
+img {
+    user-select: none;
+    pointer-events: none;
+}
+
+.futuristic-button {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    border-radius: 12px;
+    font-size: 18px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 30%);
+    transition: all 0.3s ease;
+    padding: 12px 36px;
+    margin: 20px 0;
+    width: 250%;
+    height: 42.5px;
+}
+
+/* Stil des deaktivierten Buttons */
+.futuristic-button:disabled {
+    background: rgb(204 204 204 / 50%);
+    color: #666;
+    cursor: not-allowed;
+}
+
+.futuristic-button:hover {
+    background: linear-gradient(to right, #0056b3, #036);
+    box-shadow: 0 5px 15px rgb(0 0 0 / 50%);
+}
+
+.field-with-asterisk {
+    display: flex;
+    align-items: center;
+}
+
+.asterisk-text {
+    margin-right: 10px;
+}
+
+.asterisk {
+    color: red;
+    vertical-align: super;
+    font-size: smaller;
+}
+
+.futuristic-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    width: 70%;
+    background: linear-gradient(to right, rgb(63 63 63 / 50%), rgb(105 105 105 / 50%));
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgb(0 0 0 / 30%);
+    overflow: auto;
+    margin: 50px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+mat-toolbar {
+    border-radius: 8px;
+    border: 1px solid white;
+}
+
+
+@media (width <= 500px) {
+    .menu-button,
+    .icon-button {
+        padding: 0 !important;
+        min-width: 0 !important;
+    }
+
+    .mat-icon {
+        width: 16px !important;
+        height: 16px !important;
+        font-size: 16px !important;
+    }
+}
+
+@media (width <= 350px) {
+    .dark-mode-toggle {
+        width: 20px !important;
+        height: 12px !important;
+    }
+
+    .custom-icon-button {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+
+

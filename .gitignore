@@ -1,0 +1,8 @@
+/.idea/
+/db/
+/sql/
+/backend/dist/
+/backend/node_modules/
+/backend/config/
+/frontend/node_modules/
+/frontend/.angular/

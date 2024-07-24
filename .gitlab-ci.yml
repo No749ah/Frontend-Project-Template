@@ -1,0 +1,37 @@
+stages:
+  - build
+  - check
+
+test-build:
+  stage: build
+  image: node:latest
+  script:
+    - cd backend
+    - npm install
+    - npm run build
+    - cd ../frontend
+    - npm install -g @angular/cli
+    - npm install
+    - ng build
+
+check-project-mode-production:
+  stage: check
+  needs:
+    - job: test-build
+      artifacts: true
+  script:
+    - sh ./backend/project_mode/check_project_mode_production.sh
+    - sh ./frontend/project_mode/check_project_mode_production.sh
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'
+
+check-project-mode-testing:
+  stage: check
+  needs:
+    - job: test-build
+      artifacts: true
+  script:
+    - sh ./backend/project_mode/check_project_mode_testing.sh
+    - sh ./frontend/project_mode/check_project_mode_testing.sh
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "testing"'
