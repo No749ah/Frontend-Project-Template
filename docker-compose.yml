@@ -16,8 +16,6 @@ services:
     image: registry.no749ah.com/vorlage-frontend:latest
     ports:
       - '4200:80'
-    build:
-      context: ./frontend
     restart: always
 
 
