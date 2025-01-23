@@ -1,2 +1,2 @@
-const ProjectModeValue: 'production' | 'testing' = 'production';
+const ProjectModeValue: 'production' | 'testing' | 'docker' = 'production';
 export default ProjectModeValue;

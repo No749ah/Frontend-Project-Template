@@ -18,6 +18,19 @@ services:
       - '4200:80'
     restart: always
 
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootPW
+      MYSQL_DATABASE: DATABASE
+      MYSQL_USER: USER
+      MYSQL_PASSWORD: PASSWORD
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+
 
 networks:
   default:

@@ -19,8 +19,10 @@ let rootUrl;
 
 if (ProjectModeValue == 'testing') {
     rootUrl = "http://localhost:3000"
+} else if (ProjectModeValue == 'docker') {
+    rootUrl = "http://vorlage-api:3000"
 } else if (ProjectModeValue == 'production') {
-    rootUrl = "https://api.gmp-bot.com"
+    rootUrl = "https://api.mydomain.com"
 }
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -38,6 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         FormsModule,
         HttpClientModule,
         BrowserAnimationsModule,
+        // ApiModule.forRoot({rootUrl: rootUrl}),
         HttpClientModule,
         TranslateModule.forRoot({
             loader: {
