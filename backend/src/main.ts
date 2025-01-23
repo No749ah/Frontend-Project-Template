@@ -5,7 +5,7 @@ import ProjectModeValue from '../project_mode/mode/projectmode';
 if (ProjectModeValue == 'testing') {
   const envPath = path.resolve(__dirname, './../../../config/.env');
   dotenv.config({ path: envPath });
-} else if (ProjectModeValue == 'production' || ProjectModeValue == 'prod-testing') {
+} else if (ProjectModeValue == 'production' || ProjectModeValue == 'docker') {
   const envPath = path.resolve(__dirname, './../../config/.env');
   dotenv.config({ path: envPath });
 }

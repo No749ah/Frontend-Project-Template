@@ -4,7 +4,7 @@
 PROJECTMODE=$(grep "const ProjectModeValue" ./frontend/project_mode/mode/projectmode.ts | cut -d"=" -f2 | cut -d";" -f1 | tr -d '[:space:]')
 
 # Überprüfen, ob der ProjectModeValue 'production' ist
-if [ "$PROJECTMODE" == "'production'" ]; then
+if [ "$PROJECTMODE" = "'production'" ]; then
     echo "Project mode is set to production. Continuing the pipeline."
     exit 0
 else
