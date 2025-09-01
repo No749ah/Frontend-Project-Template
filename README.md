@@ -2,7 +2,11 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) API of Vorlage
+Templates for all my frontend projects.
+See:
+- [Floorboard](https://floorboard.no749ah.com/)
+- More private projects
+
 
 ## Fast installation & start
 
