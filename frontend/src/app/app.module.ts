@@ -1,5 +1,5 @@
 import ProjectModeValue from "../../project_mode/mode/projectmode";
-import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {NgModule} from "@angular/core";
 import {AppComponent} from "./app.component";
@@ -29,19 +29,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
 }
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         AppComponent,
         VorlageComponent,
     ],
-    imports: [
-        BrowserModule,
+    bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
         BrowserAnimationsModule,
-        // ApiModule.forRoot({rootUrl: rootUrl}),
-        HttpClientModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -50,9 +46,7 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         }),
         MatIconModule,
-        RouterOutlet,
-    ],
-    providers: [
+        RouterOutlet], providers: [
         {
             provide: HTTP_INTERCEPTORS,
             useClass: TokenInterceptor,
@@ -62,9 +56,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         DatePipe,
         {
             provide: LocationStrategy, useClass: HashLocationStrategy
-        }
-    ],
-    bootstrap: [AppComponent]
-})
+        },
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule {
 }
